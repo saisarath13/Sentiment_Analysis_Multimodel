@@ -4,3 +4,4 @@ pandas
 spacy
 xgboost
 joblib
+gunicorn
