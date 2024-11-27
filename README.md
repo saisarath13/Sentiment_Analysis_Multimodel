@@ -144,9 +144,6 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 3. Make your changes and commit them.
 4. Open a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 
 
