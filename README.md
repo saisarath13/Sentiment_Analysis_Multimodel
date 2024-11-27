@@ -28,21 +28,21 @@ Each model is fine-tuned using **GridSearchCV** to find the best hyperparameters
 To set up this project locally, follow these steps:
 
 1. Clone the repository using the following command:
-   `git clone https://github.com/saisarath13/Sentiment_Analysis_Multimodel.git`
+   git clone https://github.com/saisarath13/Sentiment_Analysis_Multimodel.git
    Then, navigate to the project folder:
-   `cd Sentiment_Analysis_Multimodel`
+   cd Sentiment_Analysis_Multimodel
 
 2. Create a virtual environment and activate it:
-   - Run `python -m venv venv`
+   - Run python -m venv venv
    - For activating the environment, use:
-     - On Windows: `venv\Scripts\activate`
-     - On macOS/Linux: `source venv/bin/activate`
+     - On Windows: venv\Scripts\activate
+     - On macOS/Linux: source venv/bin/activate
 
 3. Install the necessary dependencies with:
-   `pip install -r requirements.txt`
+   pip install -r requirements.txt
 
 4. Download the SpaCy model for preprocessing with:
-   `python -m spacy download en_core_web_sm`
+   python -m spacy download en_core_web_sm
 
 ## Usage
 
@@ -52,7 +52,7 @@ After setting up the environment and installing the dependencies, you can run th
 
 To train and evaluate the models, run the following command:
 
-`python main.py`
+python main.py
 
 This will:
 - Train models with hyperparameter tuning.
@@ -61,7 +61,7 @@ This will:
 
 ### Predict Sentiment
 
-To make predictions, you can call the `predict_sentiment()` function by providing a review text as input. For example:
+To make predictions, you can call the predict_sentiment() function by providing a review text as input. For example:
 text_input = 'I really enjoy using this product, it's fantastic!' predictions = predict_sentiment(text_input) print(predictions)
 
 ## Project Structure
@@ -70,26 +70,26 @@ The project has the following structure:
 
 - **Sentiment_Analysis_Multimodel/**:
   - **app/**: Web application files (if any)
-    - `__init__.py`
-    - `routes.py`
+    - __init__.py
+    - routes.py
   - **models/**: Trained models and vectorizers
-    - `svm_model.pkl`
-    - `logreg_model.pkl`
-    - `rf_model.pkl`
-    - `xgb_model.pkl`
-    - `tfidf_vectorizer.pkl`
+    - svm_model.pkl
+    - logreg_model.pkl
+    - rf_model.pkl
+    - xgb_model.pkl
+    - tfidf_vectorizer.pkl
   - **notebooks/**: Jupyter Notebooks (optional for visualization)
-    - `sentiment_analysis.ipynb`
+    - sentiment_analysis.ipynb
   - **src/**: Source code for preprocessing, training, etc.
-    - `predict.py`
-    - `preprocess.py`
-    - `train.py`
-    - `utils.py`
+    - predict.py
+    - preprocess.py
+    - train.py
+    - utils.py
   - **templates/**: HTML files (if any web app is created)
-    - `index.html`
+    - index.html
   - **tests/**: Test files for prediction and routes
-    - `test_predictions.py`
-    - `test_routes.py`
+    - test_predictions.py
+    - test_routes.py
   - **.gitignore**: Git ignore file
   - **main.py**: Main script to run the project
   - **requirements.txt**: Required Python libraries
@@ -101,19 +101,19 @@ The project has the following structure:
 This project utilizes several machine learning models to perform sentiment analysis. Each model is fine-tuned using **GridSearchCV** to determine the optimal hyperparameters.
 
 1. **Support Vector Machine (SVM)**
-   - Hyperparameters tuned: `C`, `kernel`, `class_weight`
+   - Hyperparameters tuned: C, kernel, class_weight
    - Best hyperparameters are chosen using GridSearchCV with cross-validation.
 
 2. **Logistic Regression**
-   - Hyperparameters tuned: `C`, `solver`, `max_iter`
+   - Hyperparameters tuned: C, solver, max_iter
    - Fine-tuned using GridSearchCV for optimal regularization and solver parameters.
 
 3. **Random Forest**
-   - Hyperparameters tuned: `n_estimators`, `max_depth`, `class_weight`
+   - Hyperparameters tuned: n_estimators, max_depth, class_weight
    - GridSearchCV used to find the best values for tree depth and class balancing.
 
 4. **XGBoost**
-   - Hyperparameters tuned: `max_depth`, `learning_rate`, `n_estimators`, `subsample`, `colsample_bytree`, `scale_pos_weight`
+   - Hyperparameters tuned: max_depth, learning_rate, n_estimators, subsample, colsample_bytree, scale_pos_weight
    - The XGBoost model is trained with GridSearchCV for better handling of class imbalance and overfitting.
 
 ## Results
