@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import pickle
-from src.preprocess import preprocess_text  # Importing preprocess function
+from src.preprocess import preprocess_text  
 
 app = Flask(__name__)
 
@@ -27,7 +27,7 @@ def get_prediction(text, model):
     # Predict sentiment using the specified model
     sentiment = model.predict(features_dense)
 
-    return sentiment[0]  # Return the predicted sentiment (0 or 1)
+    return sentiment[0]  
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
