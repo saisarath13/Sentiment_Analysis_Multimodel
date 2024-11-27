@@ -126,13 +126,13 @@ Each model is evaluated using accuracy, confusion matrix, and classification rep
 - **SVM Accuracy:** 0.85
 
 #### **2. Logistic Regression**
-- **Accuracy**: 0.75
+- **Accuracy**: 0.80
 
 #### **3. Random Forest**
-- **Accuracy**: 0.85
+- **Accuracy**: 0.95
 
 #### **4. XGBoost**
-- **Accuracy**: 0.75
+- **Accuracy**: 0.80
 
 ## Contributing
 
