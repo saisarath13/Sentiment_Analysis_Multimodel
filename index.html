@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* Optional: Custom blue shade (if Bootstrap's default is not preferred) */
+        .btn-custom-blue {
+            background-color: #007bff; /* Blue */
+            color: white;
+            border: none;
+        }
+        .btn-custom-blue:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header text-center">
+                <h2>Sentiment Analysis Multimodel Tool</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="text_input" class="form-label">Enter Text:</label>
+                        <textarea id="text_input" name="text_input" class="form-control" rows="4" required>{{ text_input or "" }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="model_select" class="form-label">Select Model:</label>
+                        <select id="model_select" name="model_select" class="form-select" required>
+                            <option value="" disabled selected>Choose a model</option>
+                            {% for model in models %}
+                                <option value="{{ model }}" {% if selected_model == model %}selected{% endif %}>{{ model }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <!-- Analyze Sentiment button in blue -->
+                    <button type="submit" class="btn btn-custom-blue w-100">Analyze Sentiment</button>
+                </form>
+                
+                <!-- Error message display -->
+                {% if error %}
+                    <div class="alert alert-danger mt-3">{{ error }}</div>
+                {% endif %}
+            </div>
+        </div>
+        
+        {% if prediction is not none %}
+        <div class="card mt-4 shadow">
+            <div class="card-header text-center">
+                <h3>Prediction Result</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Input Text:</strong> {{ text_input }}</p>
+                <p><strong>Selected Model:</strong> {{ selected_model }}</p>
+                <p><strong>Predicted Sentiment:</strong> {{ "Positive" if prediction == 1 else "Negative" }}</p>
+                <!-- Try Another button in blue -->
+                <div class="text-center mt-3">
+                    <a href="/" class="btn btn-custom-blue">Try Another</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
