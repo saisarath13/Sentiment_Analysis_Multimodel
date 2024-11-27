@@ -20,38 +20,41 @@ This project performs sentiment analysis on a set of product reviews. The sentim
 - **XGBoost**
 
 Each model is fine-tuned using **GridSearchCV** to find the best hyperparameters and improve performance. The models are then saved and can be used for prediction in a real-world scenario.
-Installation
+
+Installation:
+
 To set up this project locally, follow these steps:
 
 1. Clone the repository:
-   ```bash
+   
    git clone https://github.com/saisarath13/Sentiment_Analysis_Multimodel.git
    cd Sentiment_Analysis_Multimodel
-   ```
+   
 
 2. Create a virtual environment and activate it:
-   ```bash
+   
    python -m venv venv
    source venv/bin/activate  # On Windows use: venv\Scripts\activate
-   ```
+   
 
 3. Install the necessary dependencies:
-   ```bash
+ 
    pip install -r requirements.txt
-   ```
+ 
 
 4. Download SpaCy model for preprocessing:
-   ```bash
+
    python -m spacy download en_core_web_sm
-   ```
-Usage
+
+Usage:
+
 After setting up the environment and installing the dependencies, you can run the Jupyter notebook to see the complete implementation or use the Python script to directly execute the sentiment analysis.
 
 ### Running the Sentiment Analysis
 You can run the `main.py` script to train and evaluate the models:
-```bash
+
 python main.py
-```
+
 This will:
 - Train models with hyperparameter tuning.
 - Save the models to disk.
@@ -59,15 +62,16 @@ This will:
 
 ### Predict Sentiment
 To make predictions, you can call the `predict_sentiment()` function by providing a review text as input. For example:
-```python
+python
 text_input = 'I really enjoy using this product, it's fantastic!'
 predictions = predict_sentiment(text_input)
 print(predictions)
-```
-Project Structure
+
+Project Structure:
+
 The project has the following structure:
 
-```
+
 Sentiment_Analysis_Multimodel/
 │
 ├── app/                         # Web application files (if any)
@@ -102,8 +106,9 @@ Sentiment_Analysis_Multimodel/
 ├── requirements.txt              # Required Python libraries
 ├── README.md                    # Project documentation
 └── sentiment_analysis.ipynb      # Jupyter notebook for analysis
-```
-Models & Tuning
+
+Models & Tuning:
+
 This project utilizes several machine learning models to perform sentiment analysis. Each model is fine-tuned using **GridSearchCV** to determine the optimal hyperparameters.
 
 1. **Support Vector Machine (SVM)**
@@ -125,7 +130,7 @@ Results
 Each model is evaluated using accuracy, confusion matrix, and classification report. The performance of each model is compared, and the best-performing model can be selected for further deployment.
 
 ### Example output:
-```
+
 SVM Accuracy: 0.85
 Confusion Matrix:
  [[13  2]
@@ -134,7 +139,7 @@ Classification Report:
                precision    recall  f1-score   support
      negative       0.81      0.87      0.84        15
      positive       0.86      0.80      0.83        15
-```
+
 Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or features you'd like to suggest.
 
