@@ -1,4 +1,4 @@
-                                  Sentiment Analysis Using Multiple Machine Learning Models
+                                  **Sentiment Analysis Using Multiple Machine Learning Models**
 
 This project implements sentiment analysis using various machine learning models including Support Vector Machine (SVM), Logistic Regression, Random Forest, and XGBoost. The models are trained on text data to predict sentiment (positive or negative) from product reviews.
 Table of Contents
@@ -10,7 +10,7 @@ Table of Contents
 - [Results](#results)
 - [Contributing](#contributing)
 
-Overview: 
+**Overview:**
 
 This project performs sentiment analysis on a set of product reviews. The sentiment of each review is labeled as either **positive** or **negative**. The text data is preprocessed using SpaCy for lemmatization, then transformed into TF-IDF features. The following machine learning models are implemented:
 
