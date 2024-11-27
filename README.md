@@ -130,11 +130,9 @@ Each model is evaluated using accuracy, confusion matrix, and classification rep
 
 #### **3. Random Forest**
 - **Accuracy**: 0.85
-- **Fitting process**: The model was tuned using 3 folds for each of 729 candidates, totaling 2187 fits.
 
 #### **4. XGBoost**
 - **Accuracy**: 0.75
-- **Confusion Matrix**:
 
 ## Contributing
 
