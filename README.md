@@ -62,4 +62,88 @@ This will:
 ### Predict Sentiment
 
 To make predictions, you can call the `predict_sentiment()` function by providing a review text as input. For example:
+text_input = 'I really enjoy using this product, it's fantastic!' predictions = predict_sentiment(text_input) print(predictions)
+
+## Project Structure
+
+The project has the following structure:
+
+- **Sentiment_Analysis_Multimodel/**:
+  - **app/**: Web application files (if any)
+    - `__init__.py`
+    - `routes.py`
+  - **models/**: Trained models and vectorizers
+    - `svm_model.pkl`
+    - `logreg_model.pkl`
+    - `rf_model.pkl`
+    - `xgb_model.pkl`
+    - `tfidf_vectorizer.pkl`
+  - **notebooks/**: Jupyter Notebooks (optional for visualization)
+    - `sentiment_analysis.ipynb`
+  - **src/**: Source code for preprocessing, training, etc.
+    - `predict.py`
+    - `preprocess.py`
+    - `train.py`
+    - `utils.py`
+  - **templates/**: HTML files (if any web app is created)
+    - `index.html`
+  - **tests/**: Test files for prediction and routes
+    - `test_predictions.py`
+    - `test_routes.py`
+  - **.gitignore**: Git ignore file
+  - **main.py**: Main script to run the project
+  - **requirements.txt**: Required Python libraries
+  - **README.md**: Project documentation
+  - **sentiment_analysis.ipynb**: Jupyter notebook for analysis
+
+## Models & Tuning
+
+This project utilizes several machine learning models to perform sentiment analysis. Each model is fine-tuned using **GridSearchCV** to determine the optimal hyperparameters.
+
+1. **Support Vector Machine (SVM)**
+   - Hyperparameters tuned: `C`, `kernel`, `class_weight`
+   - Best hyperparameters are chosen using GridSearchCV with cross-validation.
+
+2. **Logistic Regression**
+   - Hyperparameters tuned: `C`, `solver`, `max_iter`
+   - Fine-tuned using GridSearchCV for optimal regularization and solver parameters.
+
+3. **Random Forest**
+   - Hyperparameters tuned: `n_estimators`, `max_depth`, `class_weight`
+   - GridSearchCV used to find the best values for tree depth and class balancing.
+
+4. **XGBoost**
+   - Hyperparameters tuned: `max_depth`, `learning_rate`, `n_estimators`, `subsample`, `colsample_bytree`, `scale_pos_weight`
+   - The XGBoost model is trained with GridSearchCV for better handling of class imbalance and overfitting.
+
+## Results
+
+Each model is evaluated using accuracy, confusion matrix, and classification report. The performance of each model is compared, and the best-performing model can be selected for further deployment.
+
+### Example Output:
+- **SVM Accuracy:** 0.85
+- **Confusion Matrix:**
+  - [[13  2]
+     [ 3 12]]
+- **Classification Report:**
+
+|               | Precision | Recall | F1-Score | Support |
+|---------------|-----------|--------|----------|---------|
+| Negative      | 0.81      | 0.87   | 0.84     | 15      |
+| Positive      | 0.86      | 0.80   | 0.83     | 15      |
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or features you'd like to suggest.
+
+### How to Contribute
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes and commit them.
+4. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 
