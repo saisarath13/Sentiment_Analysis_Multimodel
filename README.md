@@ -124,15 +124,17 @@ Each model is evaluated using accuracy, confusion matrix, and classification rep
 
 ### Example Output:
 - **SVM Accuracy:** 0.85
-- **Confusion Matrix:**
-  - [[13  2]
-     [ 3 12]]
-- **Classification Report:**
 
-|               | Precision | Recall | F1-Score | Support |
-|---------------|-----------|--------|----------|---------|
-| Negative      | 0.81      | 0.87   | 0.84     | 15      |
-| Positive      | 0.86      | 0.80   | 0.83     | 15      |
+#### **2. Logistic Regression**
+- **Accuracy**: 0.75
+
+#### **3. Random Forest**
+- **Accuracy**: 0.85
+- **Fitting process**: The model was tuned using 3 folds for each of 729 candidates, totaling 2187 fits.
+
+#### **4. XGBoost**
+- **Accuracy**: 0.75
+- **Confusion Matrix**:
 
 ## Contributing
 
