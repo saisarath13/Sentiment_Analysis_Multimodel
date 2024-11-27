@@ -1,0 +1,29 @@
+
+# Ignore Python virtual environments
+venv/
+env/
+
+# Ignore Python bytecode
+*.pyc
+*.pyo
+
+# Ignore environment variable files (for sensitive data like API keys)
+.env
+
+# Ignore IDE/editor config folders
+.vscode/
+.idea/
+
+# Ignore build/dist folders (for frontend or packaging)
+dist/
+build/
+
+# Ignore log files
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore test outputs, if any
+tests/__pycache__/
