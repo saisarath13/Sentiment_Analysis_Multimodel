@@ -10,7 +10,8 @@ Table of Contents
 - [Results](#results)
 - [Contributing](#contributing)
 
-Overview
+Overview: 
+
 This project performs sentiment analysis on a set of product reviews. The sentiment of each review is labeled as either **positive** or **negative**. The text data is preprocessed using SpaCy for lemmatization, then transformed into TF-IDF features. The following machine learning models are implemented:
 
 - **Support Vector Machine (SVM)**
