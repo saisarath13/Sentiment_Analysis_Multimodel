@@ -6,33 +6,70 @@
     <title>Sentiment Analysis</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
-        /* Optional: Custom blue shade (if Bootstrap's default is not preferred) */
+        body {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%;
+        }
+        .card-header {
+            background: #0056b3;
+            color: white;
+            font-weight: bold;
+        }
         .btn-custom-blue {
-            background-color: #007bff; /* Blue */
+            background-color: #007bff;
             color: white;
             border: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
         .btn-custom-blue:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            background-color: #0056b3;
+            color: #fff;
         }
-        .error-message {
-            color: red;
+        textarea, select {
+            resize: none;
+        }
+        .alert-danger {
+            font-weight: bold;
+        }
+        .prediction-section {
+            background: #f8f9fa;
+        }
+        .prediction-section h3 {
+            color: #007bff;
+        }
+        .container {
+            max-width: 800px;
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="card shadow">
-            <div class="card-header text-center">
+    <div class="container">
+        <div class="card shadow-lg">
+            <div class="card-header text-center py-3">
                 <h2>Sentiment Analysis Multimodel Tool</h2>
             </div>
             <div class="card-body">
                 <form method="POST">
-                    <div class="mb-3">
+                    <!-- Text Input -->
+                    <div class="mb-4">
                         <label for="text_input" class="form-label">Enter Text:</label>
-                        <textarea id="text_input" name="text_input" class="form-control" rows="4" required>{{ text_input or "" }}</textarea>
+                        <textarea id="text_input" name="text_input" class="form-control" rows="4" required placeholder="Type your text here...">{{ text_input or "" }}</textarea>
                     </div>
-                    <div class="mb-3">
+                    
+                    <!-- Model Selection -->
+                    <div class="mb-4">
                         <label for="model_select" class="form-label">Select Model:</label>
                         <select id="model_select" name="model_select" class="form-select" required>
                             <option value="" disabled selected>Choose a model</option>
@@ -41,28 +78,34 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <!-- Analyze Sentiment button in blue -->
+                    
+                    <!-- Analyze Sentiment Button -->
                     <button type="submit" class="btn btn-custom-blue w-100">Analyze Sentiment</button>
                 </form>
                 
-                <!-- Error message display -->
+                <!-- Error Display -->
                 {% if error %}
-                    <div class="alert alert-danger mt-3">{{ error }}</div>
+                    <div class="alert alert-danger mt-3 text-center">{{ error }}</div>
                 {% endif %}
             </div>
         </div>
-        
+
+        <!-- Prediction Section -->
         {% if prediction is not none %}
-        <div class="card mt-4 shadow">
-            <div class="card-header text-center">
+        <div class="card mt-4 shadow-lg prediction-section">
+            <div class="card-header text-center py-3">
                 <h3>Prediction Result</h3>
             </div>
             <div class="card-body">
                 <p><strong>Input Text:</strong> {{ text_input }}</p>
                 <p><strong>Selected Model:</strong> {{ selected_model }}</p>
-                <p><strong>Predicted Sentiment:</strong> {{ "Positive" if prediction == 1 else "Negative" }}</p>
-                <!-- Try Another button in blue -->
-                <div class="text-center mt-3">
+                <p><strong>Predicted Sentiment:</strong> 
+                    <span class="{{ 'text-success' if prediction == 1 else 'text-danger' }}">
+                        {{ "Positive" if prediction == 1 else "Negative" }}
+                    </span>
+                </p>
+                <!-- Try Another Button -->
+                <div class="text-center mt-4">
                     <a href="/" class="btn btn-custom-blue">Try Another</a>
                 </div>
             </div>

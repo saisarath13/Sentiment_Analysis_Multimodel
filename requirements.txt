@@ -1,7 +1,7 @@
-nltk
-scikit-learn
-pandas
-spacy
-xgboost
-joblib
-gunicorn
+Flask==2.3.3
+scikit-learn==1.6.0
+xgboost==2.1.0
+numpy==1.24.4
+scipy==1.10.1
+spacy==3.6.0
+

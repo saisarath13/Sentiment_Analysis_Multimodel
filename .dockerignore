@@ -1,0 +1,38 @@
+# .dockerignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Ignore log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+
+# Test and development files
+src/tests/
+*.test
+*.spec
+
+# Ignore IDE files
+*.idea/
+.vscode/
+
+# Node and NPM files (if irrelevant)
+node_modules/
+package-lock.json
+
+# Generated artifacts
+*.egg-info
+build/
+dist/
