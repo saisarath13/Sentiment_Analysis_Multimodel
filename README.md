@@ -1,7 +1,7 @@
 # Sentiment Analysis Multimodel
 
 ## Overview
-**Sentiment Analysis Multimodel** is a Flask-based web application designed to analyze and predict sentiment from textual input using multiple machine learning models, including SVM, Logistic Regression, Random Forest, and XGBoost. The application is deployed on **Google Cloud Platform (GCP)** and offers users the ability to select a model for sentiment prediction through an interactive web interface.
+**Sentiment Analysis Multimodel** is a web application designed to analyze and predict sentiment from textual input using multiple machine learning models, including SVM, Logistic Regression, Random Forest, and XGBoost. The application is deployed on **Google Cloud Platform (GCP)** and offers users the ability to select a model for sentiment prediction through an interactive web interface.
 
 ---
 
@@ -24,7 +24,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/sentiment-analysis-multimodel.git
+   git clone https://github.com/saisarath13/sentiment-analysis-multimodel.git
    cd sentiment-analysis-multimodel
    ```
 
@@ -129,5 +129,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 For inquiries or contributions, please reach out to:
 - **Email**: sarathk1307@gmail.com
-- **GitHub**: [Your GitHub Profile](https://github.com/your-profile)
+- **GitHub**: https://github.com/saisarath13/
 
